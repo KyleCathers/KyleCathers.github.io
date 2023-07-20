@@ -1,0 +1,134 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0px;
+    font-family: verdana, sans-serif;
+}
+
+.etchy {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(106, 0, 0);
+    padding: 30px;
+    gap: 20px;
+    border: solid black 5px;
+    border-radius: 20px;
+    box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.26);
+}
+
+.title {
+    font-size: 50px;
+    font-weight: bolder;
+    color: white;
+    text-shadow: -3px -3px 0 black, 3px -3px 0 black, -3px 3px 0 black, 3px 3px 0 black;
+}
+
+.buttons {
+    display: flex;
+    gap: 20px;
+}
+
+button {
+    background-color: rgb(204, 0, 0);
+    border: 2px solid black;
+    border-radius: 3px;
+    box-shadow: rgba(255, 255, 255, .4) 0 1px 0 0 inset;
+    box-sizing: border-box;
+    color: white;
+    cursor: pointer;
+    display: inline-block;
+    line-height: 1.15385;
+    padding: 8px .8em;
+    font-size: 15px;
+}
+
+button:hover {
+    background-color: rgb(154, 0, 0);
+}
+
+.pickColorButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pickText {
+    padding-right: 5px;
+}
+
+.screen {
+    border: solid black 3px;
+    width: 500px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+}
+
+input {
+    padding: 0px;
+    cursor: pointer;
+    width: 25px;
+}
+
+.pixel {
+    width: 0px;
+    height: 0px;
+    margin: 0px;
+    padding: 0px;
+    background-color: white;
+}
+
+.selectedPixel {
+    background-color: white;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+.slideContainer {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+.slider {
+    width: 50%;
+    height: 15px;
+    transition: opacity .2s;
+    color: red;
+    -webkit-appearance: none;
+    border: 2px solid black;
+}
+
+.slider::-webkit-slider-runnable-track {
+    border-radius: 1px;
+    height: 15px;
+}
+
+.slider::-webkit-slider-thumb {
+    height: 30px;
+    width: 30px;
+    background: red;
+    cursor: pointer;
+    -webkit-appearance: none;
+    border: 2px solid black;
+    margin-top: -7px;
+}
+
+.sliderValue {
+    border: solid black 1px;
+    width: 120px;
+    text-align: center;
+    padding: 10px;
+    color: white;
+    background-color: rgb(204, 0, 0);
+    border-radius: 3px;
+}
