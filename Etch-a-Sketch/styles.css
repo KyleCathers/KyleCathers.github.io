@@ -132,3 +132,9 @@ input {
     background-color: rgb(204, 0, 0);
     border-radius: 3px;
 }
+
+@media (max-width: 630px) {
+    body {
+        transform: scale(var(--scaleRatio));
+    }
+}

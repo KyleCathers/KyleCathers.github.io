@@ -1,3 +1,13 @@
+// set etchy size
+let etchy = document.querySelector("body");
+
+window.addEventListener('resize', () => {
+    let width = window.innerWidth;
+    let scaleRatio = width/630;
+    etchy.style.setProperty("--scaleRatio", scaleRatio);
+});
+
+
 let buttonState = 'black'; // default black pen
 let mouseState = 0; // 0 = up, 1 = down;
 let dimension = 16;

@@ -1,3 +1,12 @@
+// set RPS size
+let rockPaperScissors = document.querySelector(".gameBorder");
+
+window.addEventListener('resize', () => {
+    let width = window.innerWidth;
+    let scaleRatio = width/900;
+    rockPaperScissors.style.setProperty("--scaleRatio", scaleRatio);
+});
+
 let compScore = 0;
 let humanScore = 0;
 
