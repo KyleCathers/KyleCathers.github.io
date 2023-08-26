@@ -171,6 +171,7 @@ button img {
 }
 
 .bottomRow button {
+    min-width: 100px;
     width: 100%;
     height: 50px;
     border-radius: 30px;
@@ -195,175 +196,191 @@ button img {
     font-weight: bold;
 }
 
+/*                              Main section                            */
+
 .mainContent {
     grid-column: 2 / 5;
     grid-row: 2 / 6;
     background-color: #eeffee;
     display: grid;
-    grid-template-columns: 2fr 1fr;
     overflow-y: scroll;
     padding: 0px 20px 0px 20px;
-    gap: 20px;
-}
-
-.projectsContainer {
-    grid-column: 1 / 2;
-    display: grid;
     grid-template-rows: 60px calc(100% - 60px);
 }
 
-.projects {
+.topRowContainer {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    align-items: center;
+    grid-template-columns: 1fr 1fr;
+}
+
+.bookButtons {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+}
+
+.addBookButton img{
+    height: 30px;
+    cursor: pointer;
+}
+
+.addBookButton img:hover {
+    transform: scale(1.1);
+}
+
+.removeBookButton img{
+    height: 30px;
+    cursor: pointer;
+}
+
+.removeBookButton img:hover {
+    transform: scale(1.1);
+}
+
+.booksContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 30px;
 }
 
-.projectCard {
+.bookCard {
     border-radius: 20px;
     border: solid black 1px;
     width: 100%;
-    aspect-ratio: 3 / 2;
-    display: grid;
-    grid-template-columns: 10fr 1fr 1fr;
-    grid-template-rows: 1fr 10fr 2fr;
+    height: 300px;
     padding: 20px 40px 20px 40px;
     box-sizing: border-box;
     column-gap: 10px;
-}
-
-.projectCard .image {
-    grid-column: 1 / 4;
-    grid-row: 2 / 3;
-    display: grid;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    border-radius: 1rem;
+    gap: 20px;
+    background-color: #dbffe2;
 }
 
-.cardTitle,
-.tag {
-    display: grid;
-    align-items: center;
-    font-weight: bold;
-}
-
-.cardTitle {
-    font-size: 1.3rem;
-}
-
-.tag {
-    text-align: end;
-    font-size: 1rem;
-    grid-column: 2 / 4;
-
-}
-
-.description {
-    padding-top: 10px;
-    display: grid;
-    align-items: center;
-    font-size: 1.1rem;
-}
-
-.liveButton,
-.githubButton {
-    background-size: 75%;
-    background-repeat: no-repeat;
-    background-position: center;
-}
-
-.liveButton {
-    background-image: url(./images/liveIcon.png);
-}
-
-.githubButton {
-    background-image: url(./images/githubLogo.png);
-}
-
-#signupForm .image {
-    background-image: url(./images/signupformProject.png);
-}
-
-#calculator .image {
-    background-image: url(./images/calculatorProject.png);
-}
-
-#etchASketch .image {
-    background-image: url(./images/etchasketchProject.png);
-}
-
-#processor .image {
-    background-image: url(./images/processorProject.png);
-}
-
-#dualbuckPCB .image {
-    background-image: url(./images/dualbuckProject.png);
-}
-
-#robotArm .image {
-    background-image: url(./images/robotarmProject.png);
-}
-
-#rockPaperScissors .image {
-    background-image: url(./images/rpsProject.png);
-}
-
-#landingPage .image {
-    background-image: url(./images/LandingPageProject.png);
-}
-
-#odinRecipes .image {
-    background-image: url(./images/recipeProject.png);
-}
-
-#alarmClock .image {
-    background-image: url(./images/alarmclockProject.jpg);
-}
-
-#cordicFSM .image {
-    background-image: url(./images/cordicFSMProject.png);
-}
-
-.exercisesContainer {
-    min-width: 240px;
-}
-
-.jsExercisesContainer {
-    grid-column: 3 / 4;
-    grid-row: 1 / 4;
-    display: grid;
-    grid-template-rows: 60px calc(100% - 60px);
-}
-
-.jsExercises,
-.cssExercises {
-    border: solid black 1px;
-    border-radius: 20px;
-}
-
-.cssExercisesContainer {
-    grid-column: 3 / 4;
-    grid-row: 4 / 7;
-    display: grid;
-    grid-template-rows: 60px calc(100% - 60px);
+.bookCard:hover {
+    transform: scale(1.025);
 }
 
 .title {
     font-size: 1.5rem;
     font-weight: bold;
-    padding: 20px 0px 0px 10px;
+    padding: 10px 0px 10px 10px;
 }
 
-.exercise {
-    min-height: 40px;
-    display: block;
-    box-sizing: border-box;
-    border-bottom: dashed black 1px;
-    margin: 20px 20px 0px 20px;
+.field {
+    font-size: 1.3rem;
+    text-align: center;
 }
 
-.exercise:last-child {
+.value {
+    text-align: center;
+}
+
+.value:after,
+.error:after {
+    content: " ";
+    white-space: pre;
+}
+
+.error {
+    color: red;
+    text-align: center;
+}
+
+dialog {
+    left: 40%;
+    top: 40%;
+    padding: 30px 30px 30px 30px;
+    border-radius: 20px;
+}
+
+.modalTitle {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+.readRow,
+.dialogRow {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 10px;
+}
+
+.readRow {
+    flex-direction: row;
+    justify-content: center;
+}
+
+.dialogRow {
+    flex-direction: column;
+    align-items: center;
+}
+
+label {
+    font-size: 1.3rem;
+}
+
+form button {
+    margin-top: 20px;
+    width: 50%;
+    height: 50px;
+    border-radius: 20px;
     border: 0;
+    background-color: #95bc9d;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+form button:hover {
+    background-color: #334236;
+    color: white;
+}
+
+form input {
+    height: 24px;
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+.readRow input {
+    width: 24px;
+    accent-color: #334236;
+    margin-left: 10px;
+}
+
+.modal {
+    background-color: #ddffe4;
+}
+
+#read,
+#notRead {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    height: 40px;
+    border-radius: 10px;
+    border: 0;
+    cursor: pointer;
+}
+
+#read {
+    background-color: #95bc9d;
+}
+
+#notRead {
+    background-color: #334236;
+    color: white;
+}
+
+#numPagesInput {
+    padding-left: 15px;
+    width: 211px;
 }
