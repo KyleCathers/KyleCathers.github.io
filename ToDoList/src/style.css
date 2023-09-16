@@ -1,0 +1,309 @@
+:root {
+  --menu-width: 300px;
+}
+
+html,
+body {
+  margin: 0px;
+  height: 100%;
+  padding: 0px;
+}
+
+#container {
+  margin: 0px;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+#header {
+  width: 100%;
+  height: 100px;
+  background-color: #c0ceff;
+  border-bottom: solid 3px #a4b7fa;
+  display: flex;
+}
+
+#main {
+  width: 100%;
+  height: calc(100vh - 100px);
+  display: flex;
+  flex-direction: row;
+}
+
+#menu {
+  background-color: #f4f4f4;
+  width: var(--menu-width);
+  height: 100%;
+  border-right: solid #e3e3e3 3px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0px 0px 50px 20px;
+  font-size: 2rem;
+}
+
+#header-logo {
+  display: flex;
+  height: 100%;
+  padding: 0px 20px 0px 20px;
+  align-items: center;
+}
+
+#header-logo-img {
+  height: 80px;
+}
+
+#header-text {
+  font-size: 3rem;
+  font-family: "MyCursive";
+  align-self: center;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+}
+
+@font-face {
+  font-family: "MyCursive";
+  src: url("./fonts/CedarvilleCursive-Regular.ttf") format("truetype");
+}
+
+#add-project,
+#add-task {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 75px;
+}
+
+#add-project-button,
+#add-task-button {
+  height: 65px;
+}
+
+#task-info-modal,
+#add-task-modal,
+#add-project-modal {
+  font-size: 2rem;
+  border: solid #002aff 5px;
+  border-radius: 5px;
+}
+
+.modalTitle {
+  font-size: 2.5rem;
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+.dialogRow {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+label,
+.submitButton,
+input {
+  font-size: 1.5rem;
+}
+
+button {
+  background-color: #002aff;
+  color: white;
+  border: 0;
+  width: 100px;
+  height: 40px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#task-section {
+  padding: 50px 0px 50px 0px;
+  gap: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.delete,
+.edit {
+  height: 35px;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.button-container {
+  height: 40px;
+  width: 40px;
+  display: flex;
+  align-items: center;
+}
+
+.custom-project-item {
+  display: flex;
+  justify-content: space-between;
+  padding-right: 20px;
+  align-items: center;
+}
+
+.click {
+  transition: all 0.2s ease-in-out;
+  transform-origin: 0%;
+  cursor: pointer;
+}
+
+.click:hover {
+  transform: scale(1.2);
+  padding-right: 5px;
+}
+
+#main-content {
+  height: 100%;
+  width: calc(100vw - var(--menu-width));
+  box-sizing: border-box;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  overflow: auto;
+}
+
+#main-content-title {
+  font-size: 2rem;
+}
+
+.task {
+  border-radius: 15px;
+  border: solid black 3px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  gap: 20px;
+  box-sizing: border-box;
+  transition: all 0.2s ease-in-out;
+  font-size: 1.3rem;
+  min-width: 600px;
+}
+
+.High {
+  background-color: #ffbfbf;
+}
+
+.Medium {
+  background-color: #bfccff;
+}
+
+.Low {
+  background-color: #bfffc6;
+}
+
+.task:hover {
+  transform: scale(1.01);
+}
+
+.task-title {
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.task-title:hover {
+  transform: scale(1.2);
+}
+
+.task-done-state {
+  cursor: pointer;
+  padding: 0px 10px 0px 10px;
+  transition: all 0.2s ease-in-out;
+  width: 82px;
+}
+
+.task-done-state:hover {
+  transform: scale(1.1);
+}
+
+.task-right {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  white-space: nowrap;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.error {
+  color: red;
+  font-size: 1.5rem;
+}
+
+.error:after {
+  content: " ";
+  white-space: pre;
+}
+
+#current-task-info-modal {
+  width: 500px;
+  border: solid #002aff 5px;
+  border-radius: 5px;
+  font-size: 1.5rem;
+  padding-top: 0px;
+  padding-right: 10px;
+}
+
+#current-task-info-modal form {
+  align-items: flex-start;
+  gap: 5px;
+}
+
+.title-row {
+  display: flex;
+  width: 100%;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+#task-info-modal-title {
+  font-size: 3rem;
+  padding-top: 20px;
+}
+
+#exit-button {
+  cursor: pointer;
+  padding-top: 10px;
+  height: 30px;
+  transition: all 0.2s ease-in-out;
+}
+
+#exit-button:hover {
+  transform: scale(1.2);
+}
+
+#exit-button-container {
+  background-color: white;
+  width: auto;
+}
+
+input {
+  padding-left: 8px;
+  border-radius: 10px;
+  color: #484848;
+}
+
+#edit-task-modal {
+  border: solid blue 5px;
+  border-radius: 10px;
+}
+
+#edit-task-modal-done-state-input {
+  width: 20px;
+  height: 30px;
+}
